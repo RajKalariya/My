@@ -27,5 +27,5 @@ window.addEventListener('load', function () {
 
         loadpage.style.display = "none";
         mainpage.style.display = "block";
-    }, 3000);
+    }, 2000);
 })
