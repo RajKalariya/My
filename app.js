@@ -1,15 +1,12 @@
 function SendEmail() {
-    Email.send({
-        Host :"smtp.elasticemail.com",
-        Username: "rajkalariya78@gmil.com",
-        Password:"",
-        To: 'rajkalariya77@gmail.com',
-        From: "rajkalariya78@gmail.com",
-        Subject: "",
-        Body: "Email : " + document.getElementById("Email").value + "<br> Name : " + document.getElementById("name").value + "<br> Message : " + document.getElementById("Message").value,
-    }).then(
-        message => alert("Message Sent Successfully")
-    );
+    var params={
+    from_name:document.getElementById("name").value,
+    Email:document.getElementById("Email").value,
+    Message:document.getElementById("Message").value
+   }
+   emailjs.send("service_vljg83l","template_lhvtoyi",params).then(function(res){
+    alert("success! " + res.status);
+   })
 }
 
 document.addEventListener("visibilitychange", function () {
